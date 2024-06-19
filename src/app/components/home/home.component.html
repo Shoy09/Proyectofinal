@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<hr style="background-color: #22262A; margin: 0; height: 2px;">
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>Barra de busqueda de Marvel</h1>
+    <form (submit)="searchHeroes()">
+      <div class="form-group">
+        <input type="text" name="name" [(ngModel)]="heroName" class="form-control character-search-box"
+               placeholder="(Ex. Hulk, Iron Man, Spider-Man, etc...)" (keyup)="searchHeroes()">
+      </div>
+      <button type="submit" class="btn btn-danger mb-2 float-right search-character-button">Buscar!</button>
+    </form>
+  
+    <div id="cards-group" class="row mt-4">
+      <div *ngFor="let hero of heroes" class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" (click)="showDetails(hero.id)" [src]="hero.image.url">
+          <div class="card-body">
+            <h5 class="card-title" (click)="showDetails(hero.id)">{{ hero.name }}</h5>
+            <i id="{{ hero.id }}" class="fa-solid fa-plus icon" (click)="addFavourite(hero.id)" style="cursor:pointer"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="container" id="contentContainer">
+
+  <div class="d-flex align-items-center" id="characterSpinnerSection"></div>
+  <div class="d-flex align-items-center" id="comicsSpinnerSection"></div>
+
+  <section id="characterSection"></section>
+
+  <section id="comicSection"></section>
+
+
+</div>
+
+<app-footer></app-footer>

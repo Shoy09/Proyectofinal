@@ -1,0 +1,11 @@
+.footer {
+    position: fixed; /* Cambiado a fixed para que esté siempre visible en la pantalla */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px; /* Ajustado el padding para un mejor espaciado */
+    background-color: #151515;
+    color: #ED462F;
+    text-align: center; /* Centrado el texto en el footer */
+    font-size: 14px; /* Tamaño de fuente ajustado */
+}
